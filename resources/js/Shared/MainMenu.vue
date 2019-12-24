@@ -5,6 +5,10 @@
                 <icon name="dashboard" class="w-4 h-4 mr-2" :class="isUrl('') ? 'fill-white' : 'fill-indigo-light group-hover:fill-white'" />
                 <div :class="isUrl('') ? 'text-white' : 'text-indigo-lighter group-hover:text-white'">Dashboard</div>
             </inertia-link>
+            <inertia-link class="flex items-center group py-3" href="/users">
+                <icon name="users" class="w-4 h-4 mr-2" :class="isUrl('') ? 'fill-white' : 'fill-indigo-light group-hover:fill-white'" />
+                <div :class="isUrl('users') ? 'text-white' : 'text-indigo-lighter group-hover:text-white'">Users</div>
+            </inertia-link>
         </div>
     </div>
 </template>
