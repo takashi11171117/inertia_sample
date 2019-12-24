@@ -2,6 +2,10 @@
     <div>
         <h1 class="mb-8 font-bold text-3xl">Users</h1>
         <div class="mb-6 flex justify-between items-center">
+            <inertia-link class="btn-indigo" href="/users/create">
+                <span>Create</span>
+                <span class="hidden md:inline">User</span>
+            </inertia-link>
         </div>
         <div class="bg-white rounded shadow overflow-x-auto">
             <table class="w-full whitespace-no-wrap">
@@ -20,6 +24,11 @@
                         <a class="px-6 py-4 flex items-center" href="#" tabindex="-1">
                             {{ user.email }}
                         </a>
+                    </td>
+                    <td class="border-t w-px">
+                        <inertia-link class="px-4 flex items-center" :href="`/users/${user.id}/edit`" tabindex="-1">
+                            <icon name="cheveron-right" class="block w-6 h-6 fill-grey" />
+                        </inertia-link>
                     </td>
                 </tr>
                 <tr v-if="users.length === 0">
