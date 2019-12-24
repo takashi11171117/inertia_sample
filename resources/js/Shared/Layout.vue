@@ -19,13 +19,14 @@
                         <dropdown class="mt-1" placement="bottom-end">
                             <div class="flex items-center cursor-pointer select-none group">
                                 <div class="text-grey-darkest group-hover:text-indigo-dark focus:text-indigo-dark mr-1 whitespace-no-wrap">
-                                    <span>John Dae</span>
+                                    <span>{{ $page.auth.user.name }}</span>
                                 </div>
                                 <icon class="w-5 h-5 group-hover:fill-indigo-dark fill-grey-darkest focus:fill-indigo-dark" name="cheveron-down" />
                             </div>
                             <div slot="dropdown" class="mt-2 py-2 shadow-lg bg-white rounded text-sm">
-                                <a class="block px-6 py-2 hover:bg-indigo hover:text-white" href="#">My Profile</a>
+                                <inertia-link class="block px-6 py-2 hover:bg-indigo hover:text-white" :href="`/users/${$page.auth.user.id}/edit`">My Profile</inertia-link>
                                 <inertia-link class="block px-6 py-2 hover:bg-indigo hover:text-white" href="/users">Manage Users</inertia-link>
+                                <inertia-link class="block px-6 py-2 hover:bg-indigo hover:text-white" href="/logout" method="post">Logout</inertia-link>
                             </div>
                         </dropdown>
                     </div>
